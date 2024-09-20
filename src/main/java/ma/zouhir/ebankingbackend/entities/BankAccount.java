@@ -12,9 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 //@DiscriminatorColumn(name="TYPE",length=11,discriminatorType=DiscriminatorType.STRING)
-public class BankAccount {
+public abstract class BankAccount {
     @Id
     private String id;
     private double balance;
