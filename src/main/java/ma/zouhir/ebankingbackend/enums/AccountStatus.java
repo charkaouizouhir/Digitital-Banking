@@ -1,4 +1,4 @@
-package ma.zouhir.ebankingbackend.enumes;
+package ma.zouhir.ebankingbackend.enums;
 
 public enum AccountStatus {
     CREATED,

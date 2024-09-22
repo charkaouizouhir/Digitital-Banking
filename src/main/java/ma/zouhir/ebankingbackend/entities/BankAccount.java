@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ma.zouhir.ebankingbackend.enumes.AccountStatus;
+import ma.zouhir.ebankingbackend.enums.AccountStatus;
 
 import java.util.Date;
 import java.util.List;
@@ -18,11 +18,12 @@ public abstract class BankAccount {
     @Id
     private String id;
     private double balance;
+    @Temporal(TemporalType.DATE)
     private Date createdAt;
     @Enumerated(EnumType.STRING)
     private AccountStatus status;
     @ManyToOne
     private Customer customer;
-    @OneToMany(mappedBy="bankAccount")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "bankAccount")
     private List<AccountOperation> accountOperations;
 }

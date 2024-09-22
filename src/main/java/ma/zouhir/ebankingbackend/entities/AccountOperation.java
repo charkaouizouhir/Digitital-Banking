@@ -4,9 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ma.zouhir.ebankingbackend.enumes.OperationType;
+import ma.zouhir.ebankingbackend.enums.OperationType;
 
-import java.math.BigDecimal;
 import java.util.Date;
 @Data
 @NoArgsConstructor
@@ -17,6 +16,7 @@ public class AccountOperation {
     private Long id;
     private Date operationDate;
     private double amount;
+    private String description;
     @Enumerated(EnumType.STRING)
     private OperationType operationType;
     @ManyToOne
